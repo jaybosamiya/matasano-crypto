@@ -31,3 +31,4 @@ Solutions:
 11. [An ECB/CBC detection oracle](set2/11.py)
 12. [Byte-at-a-time ECB decryption (Simple)](set2/12.py)
 13. [ECB cut-and-paste](set2/13.py)
+14. [Byte-at-a-time ECB decryption (Harder)](set2/14.py)
