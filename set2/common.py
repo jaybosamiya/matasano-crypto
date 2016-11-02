@@ -1,3 +1,8 @@
+def randstr(n):
+    from random import randint
+    return ''.join(chr(randint(0, 255)) for _ in range(n))
+
+
 def pad(data, blocksize=16):
     l = (len(data) / blocksize + 1) * blocksize
     m = l - len(data)

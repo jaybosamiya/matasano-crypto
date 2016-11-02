@@ -1,9 +1,5 @@
-from common import AES_ECB_encrypt, pad
+from common import AES_ECB_encrypt, pad, randstr
 from random import randint
-
-
-def randstr(n):
-    return ''.join(chr(randint(0, 255)) for _ in range(n))
 
 
 oracle_key = randstr(16)
