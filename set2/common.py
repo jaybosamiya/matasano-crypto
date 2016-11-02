@@ -4,6 +4,17 @@ def pad(data, blocksize=16):
     return data + chr(m) * m
 
 
+def unpad(data, blocksize=16):
+    if len(data) % blocksize != 0:
+        raise Exception
+    must_unpad = ord(data[-1])
+    if must_unpad < 0 or must_unpad > blocksize:
+        raise Exception
+    if data[-must_unpad:] != chr(must_unpad) * must_unpad:
+        raise Exception
+    return data[:-must_unpad]
+
+
 def AES_ECB_encrypt(data, key):
     assert(len(key) == 16)
     assert(len(data) % 16 == 0)
@@ -53,6 +64,7 @@ def AES_CBC_decrypt(data, key, iv):
 
 if __name__ == '__main__':
     assert(pad("YELLOW SUBMARINE", 20) == "YELLOW SUBMARINE\x04\x04\x04\x04")
+    assert(unpad("YELLOW SUBMARINE\x04\x04\x04\x04", 20) == "YELLOW SUBMARINE")
     assert(
         AES_ECB_decrypt(
             AES_ECB_encrypt('this is sparta!!',
