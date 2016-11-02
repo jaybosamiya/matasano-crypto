@@ -26,3 +26,7 @@ Solutions:
 6. [Break repeating-key XOR](set1/6.py)
 7. [AES in ECB mode](set1/7.py)
 8. [Detect AES in ECB mode](set1/8.py)
+9. [Implement PKCS#7 padding](set2/9.py)
+10. [Implement CBC mode](set2/10.py)
+11. [An ECB/CBC detection oracle](set2/11.py)
+12. [Byte-at-a-time ECB decryption (Simple)](set2/12.py)
