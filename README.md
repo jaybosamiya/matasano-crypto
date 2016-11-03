@@ -35,3 +35,4 @@ Solutions:
 15. [PKCS#7 padding validation](set2/15.py)
 16. [CBC bitflipping attacks](set2/16.py)
 17. [The CBC padding oracle](set3/17.py)
+18. [Implement CTR, the stream cipher mode](set3/18.py)

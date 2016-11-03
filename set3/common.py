@@ -67,6 +67,26 @@ def AES_CBC_decrypt(data, key, iv):
     return ret
 
 
+def AES_CTR_keystream_block(key, nonce, block_number):
+    from struct import pack
+    data1 = pack('<Q', nonce)    # Little-endian, 64 bits
+    data2 = pack('<Q', block_number)
+    return AES_ECB_encrypt(data1 + data2, key)
+
+
+def AES_CTR_keystream(key, nonce):
+    block_number = 0
+    while True:
+        ks_block = AES_CTR_keystream_block(key, nonce, block_number)
+        for k in ks_block:
+            yield k
+        block_number += 1
+
+
+def AES_CTR(data, key, nonce):
+    return xor_str(data, AES_CTR_keystream(key, nonce))
+
+
 if __name__ == '__main__':
     assert(pad("YELLOW SUBMARINE", 20) == "YELLOW SUBMARINE\x04\x04\x04\x04")
     assert(unpad("YELLOW SUBMARINE\x04\x04\x04\x04", 20) == "YELLOW SUBMARINE")
@@ -80,4 +100,9 @@ if __name__ == '__main__':
             AES_CBC_encrypt(pad('SPACey'),
                             'yellow submarine', '\x00' * 16),
             'yellow submarine', '\x00' * 16) == pad('SPACey', 16))
+    assert(
+        AES_CTR(
+            AES_CTR('Outta spaceeeeee',
+                    'YELLOW SUBMARINE', 0),
+            'YELLOW SUBMARINE', 0) == 'Outta spaceeeeee')
     print "All tests pass"
