@@ -36,3 +36,4 @@ Solutions:
 16. [CBC bitflipping attacks](set2/16.py)
 17. [The CBC padding oracle](set3/17.py)
 18. [Implement CTR, the stream cipher mode](set3/18.py)
+19. [Break fixed-nonce CTR mode using substitutions](set3/19.py)
