@@ -34,3 +34,4 @@ Solutions:
 14. [Byte-at-a-time ECB decryption (Harder)](set2/14.py)
 15. [PKCS#7 padding validation](set2/15.py)
 16. [CBC bitflipping attacks](set2/16.py)
+17. [The CBC padding oracle](set3/17.py)
