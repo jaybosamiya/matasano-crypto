@@ -20,7 +20,7 @@ class MersenneTwister:
     Example usage:
 
     >>> mt = MersenneTwister(...).seed(0)
-    >>> mt.extract_number()
+    >>> mt.next()
 
     """
 
@@ -70,7 +70,7 @@ class MersenneTwister:
             self.MT[i] = self.MT[(i + self.m) % self.n] ^ xA
         self.index = 0
 
-    def extract_number(self):
+    def next(self):
         """Extract a tempered value based on MT[index].
 
         Calls twist() every n numbers.
@@ -112,6 +112,6 @@ class MT19937:
         self.mt = MersenneTwister(w, n, m, r, a, u, d, s, b, t, c, l, f)
         self.mt.seed(seed)
 
-    def extract_number(self):
+    def next(self):
         """Generate next value."""
-        return self.mt.extract_number()
+        return self.mt.next()
