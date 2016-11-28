@@ -37,3 +37,6 @@ Solutions:
 17. [The CBC padding oracle](set3/17.py)
 18. [Implement CTR, the stream cipher mode](set3/18.py)
 19. [Break fixed-nonce CTR mode using substitutions](set3/19.py)
+20. [Break fixed-nonce CTR statistically](set3/20.py)
+21. [Implement the MT19937 Mersenne Twister RNG](set3/21.py)
+22. [Crack an MT19937 seed](set3/22.py)
