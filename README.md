@@ -41,3 +41,4 @@ Solutions:
 21. [Implement the MT19937 Mersenne Twister RNG](set3/21.py)
 22. [Crack an MT19937 seed](set3/22.py)
 23. [Clone an MT19937 RNG from its output](set3/23.py)
+24. [Create the MT19937 stream cipher and break it](set3/24.py)
