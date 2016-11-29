@@ -8,7 +8,8 @@ print "[+] Made a new MT19937 generator with seed=", seed
 m = MT19937(seed)
 
 print "[+] Discarding %d values" % discard
-_discarded = [m.next() for _ in tqdm(range(discard))]
+for _ in tqdm(xrange(discard)):
+    _discarded = m.next()
 
 print "[+] Tapping 624 new values"
 vals = [m.next() for _ in range(624)]
@@ -18,7 +19,7 @@ n = MT19937()
 n.seed_via_clone(vals)
 
 print "[+] Testing equality of generators"
-for i in tqdm(range(2000000)):
+for i in tqdm(xrange(2000000)):
     if m.next() != n.next():
         print " [!] Value at %d differs!!!" % i
         break
