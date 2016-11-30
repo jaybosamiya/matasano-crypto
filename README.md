@@ -14,7 +14,7 @@ All the solutions in this repository have been written in Python 2.7, and can be
 1. [Basics](set1)
 2. [Block crypto](set2)
 3. [Block & stream crypto](set3)
-
+4. [Stream crypto and randomness](set4)
 
 Each of the sets contain solutions in the `#.py` files, as well as the questions in the `README.md` of the appropriate directory. You can jump to a solution by clicking on the heading of any of the challenges.
 
