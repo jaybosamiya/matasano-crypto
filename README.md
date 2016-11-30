@@ -23,4 +23,6 @@ Additionally the sets each have a `common.py` file, which contains code that is 
 License
 -------
 
-Everything in this repository is covered under the [MIT License](http://jay.mit-license.org/2016).
+All code in this repository is covered under the [MIT License](http://jay.mit-license.org/2016).
+
+The questions are taken from [cryptopals.com](http://cryptopals.com/). No infringement is intended.
