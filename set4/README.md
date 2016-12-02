@@ -8,7 +8,7 @@ Things get significantly trickier in the next two sets. A lot of people drop off
 
 ## [Challenge 25: Break "random access read/write" AES CTR](25.py)
 
-Back to CTR. Encrypt the recovered plaintext from [this file]() (the ECB exercise) under CTR with a random key (for this exercise the key should be unknown to you, but hold on to it).
+Back to CTR. Encrypt the recovered plaintext from [this file](data/25.txt) (the ECB exercise) under CTR with a random key (for this exercise the key should be unknown to you, but hold on to it).
 
 Now, write the code that allows you to "seek" into the ciphertext, decrypt, and re-encrypt with different plaintext. Expose this as a function, like, "_edit(ciphertext, key, offset, newtext)_".
 
