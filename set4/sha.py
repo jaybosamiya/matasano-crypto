@@ -42,6 +42,19 @@ class SHA1:
         self.data = [data[:]]   # Copy stored as a list to speed up
                                 # repeated updates
 
+    def _reinit_iv(self, h0, h1, h2, h3, h4):
+        """Re-initialize the IV of SHA1.
+
+        Use this only if you know what you are doing. Usually, you
+        never need to run this whatsoever.
+
+        """
+        self.h0 = h0
+        self.h1 = h1
+        self.h2 = h2
+        self.h3 = h3
+        self.h4 = h4
+
     def update(self, data):
         """Add more data to the class."""
         self.data.append(data[:])  # Append a copy
