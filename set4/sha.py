@@ -47,6 +47,15 @@ class SHA1:
         self.data.append(data[:])  # Append a copy
         return self
 
+    @staticmethod
+    def _genpadding(mlen):
+        """Generate padding for a message of mlen bytes."""
+        import struct
+        ret = '\x80'
+        ret += '\x00' * ((56 - (mlen + 1)) % 64)
+        ret += struct.pack('>Q', mlen * 8)
+        return ret
+
     def digest(self):
         """Generate SHA1 digest."""
         import struct
@@ -60,11 +69,7 @@ class SHA1:
         # Pre-processing
 
         data = ''.join(self.data)
-        ml = 8 * len(data)
-
-        data += '\x80'
-        data += '\x00' * ((56 - len(data)) % 64)
-        data += struct.pack('>Q', ml)
+        data += self._genpadding(len(data))
 
         assert(len(data) % 64 == 0)
 
